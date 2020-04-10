@@ -1,8 +1,5 @@
 # Learn
 
-## TODO
-- HackerOne for beginners
-
 ## Concepts
 
 ### Follow Acquisitions

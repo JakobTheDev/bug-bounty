@@ -7,22 +7,28 @@
   - [Acquisitions / Subsidiaries](#acquisitions--subsidiaries)
   - [Autonomous System Number (ASN)](#autonomous-system-number-asn)
   - [IP Space](#ip-space)
-- [Subdomain Enumeration](#subdomain-enumeration)
+- [Root Domain Enumeration](#root-domain-enumeration)
   - [Commands](#commands)
+- [Subdomain Enumeration](#subdomain-enumeration)
+  - [Commands](#commands-1)
   - [Tools](#tools)
   - [Resources](#resources)
-- [Content Discovery](#content-discovery)
-  - [Commands](#commands-1)
+- [Active Website Enumeration](#active-website-enumeration)
+  - [Commands](#commands-2)
   - [Tools](#tools-1)
+- [Content Discovery](#content-discovery)
+  - [Commands](#commands-3)
+  - [Tools](#tools-2)
   - [Lists](#lists)
   - [Tips](#tips)
 - [Platform Identification](#platform-identification)
-  - [Tools](#tools-2)
+  - [Tools](#tools-3)
 
 ## Scope Enumeration
 
 ### Acquisitions / Subsidiaries
 - [Chrunchbase](https://www.crunchbase.com/)
+- [Wikipedia](https://en.wikipedia.org/)
 
 ### Autonomous System Number (ASN)
 - [Hurricane Electric](http://he.net/)
@@ -31,6 +37,14 @@
 ### IP Space
 - [Shodan](https://www.shodan.io/) - use org: search
 
+## Root Domain Enumeration
+
+### Commands
+```bash
+# Amass intel scan
+amass intel -asn ASN
+```
+
 ## Subdomain Enumeration
 
 ### Commands
@@ -38,11 +52,16 @@
 # Amass scan
 amass -active -v -d DOMAIN
 
+# Amass aliases
+amass-single DOMAIN
+amass-list DOMAINS.txt
+
 # Subfinder scan
 subfinder -d DOMAIN
 
-# Probe for active web servers
-cat subdomains.txt | httprobe -c 50
+# Subfinder aliases
+subfinder-single DOMAIN
+subfinder-list DOMAINS.txt
 ```
 
 ### Tools
@@ -51,6 +70,22 @@ cat subdomains.txt | httprobe -c 50
 
 ### Resources
 - [Subdomains Enumeration Cheat Sheet](https://pentester.land/cheatsheets/2018/11/14/subdomains-enumeration-cheatsheet.html) - _Pentester Land_
+
+## Active Website Enumeration
+
+### Commands
+```bash
+# Probe for active web servers
+cat subdomains.txt | httprobe -c 50
+
+# Screenshot active web pages
+docker run --rm -it -v $(pwd)/screenshots:/screenshots leonjza/gowitness:latest file /screenshots/hostnames.txt
+docker run --rm -it -v $(pwd)/screenshots:/screenshots leonjza/gowitness:latest report generate
+```
+
+### Tools
+- [EyeWitness](https://github.com/FortyNorthSecurity/EyeWitness) - _FortyNorthSecurity_
+- [GoWitness](https://github.com/sensepost/gowitness) - _SensePost_
 
 ## Content Discovery
 
