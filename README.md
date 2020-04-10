@@ -1,11 +1,25 @@
-# bug-bounty
+## Environment
 
-My personal bug bounty toolkit.
+My basic testing environment includes:
+- Docker container (see [Dockerfile](Dockerfile))
+- Standard config (see my [config](https://github.com/JakobRPennington/config) repo)
+- BurpSuite
+- Firefox
+- Terminal
 
 ## Methodology
 
 - [Choose a Program](methodology/00-choose-program.md)
 - [Recon](methodology/01-recon.md)
+
+## Bug Classes
+
+- [SQLi](bug-classes/sqli.md)
+- [XSS](bug-classes/xss.md)
+
+## Polyglots
+
+- [XSS](lists/xss-polyglots.md)
 
 ## Notes
 
@@ -21,6 +35,8 @@ Below is a summary of my reconnaissance workflow. More details about the workflo
 
 ## Tips
 - Create a separate Chrome profile / Google account for Bug Bounty. Create dedicated BB accounts for YouTube etc. so you can get only relevant recommended content.
+- However you do it, set up an environment that has all the tools you use, all the time.
+- Use aliases and bash scripts to simplify commands you use all the time.
 
 
 ## Resources
