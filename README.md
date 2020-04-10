@@ -4,8 +4,8 @@ My personal bug bounty toolkit.
 
 ## Methodology
 
-- [Choose a Program]()
-- [Recon]()
+- [Choose a Program](methodology/00-choose-program.md)
+- [Recon](methodology/01-recon.md)
 
 ## Notes
 
