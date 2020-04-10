@@ -10,6 +10,7 @@
 - [Root Domain Enumeration](#root-domain-enumeration)
   - [Commands](#commands)
 - [Subdomain Enumeration](#subdomain-enumeration)
+  - [Certificate Transparency](#certificate-transparency)
   - [Commands](#commands-1)
   - [Tools](#tools)
   - [Resources](#resources)
@@ -47,6 +48,8 @@ amass intel -asn ASN
 
 ## Subdomain Enumeration
 
+### Certificate Transparency
+
 ### Commands
 ```bash
 # Amass scan
@@ -70,6 +73,7 @@ subfinder-list DOMAINS.txt
 
 ### Resources
 - [Subdomains Enumeration Cheat Sheet](https://pentester.land/cheatsheets/2018/11/14/subdomains-enumeration-cheatsheet.html) - _Pentester Land_
+- [The Art of Subdomain Enumeration](https://github.com/appsecco/the-art-of-subdomain-enumeration) - _Appsecco_
 
 ## Active Website Enumeration
 

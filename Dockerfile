@@ -113,6 +113,13 @@ RUN go get github.com/hakluke/hakrawler
 # httprobe
 RUN go get -u github.com/tomnomnom/httprobe
 
+# massdns
+RUN cd ${HOME}/toolkit \
+    && git clone https://github.com/blechschmidt/massdns \
+    && cd massdns \
+    && make \
+    && cp bin/massdns /usr/bin
+
 # seclists
 RUN cd ${HOME}/wordlists \
     && git clone --depth 1 https://github.com/danielmiessler/SecLists.git

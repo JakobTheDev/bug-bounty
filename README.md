@@ -46,6 +46,7 @@ Below is a summary of my reconnaissance workflow. More details about the workflo
 
 ### Methodology
 - [How to Shot Web: Web and mobile hacking in 2015](https://www.youtube.com/watch?v=-FAjxUOKbdI) - _Jason Haddix_
+- [The Art of Subdomain Enumeration](https://github.com/appsecco/the-art-of-subdomain-enumeration) - _Appsecco_
 
 ### Tooling
 - [Bug Bounty Toolkit](https://github.com/AlexisAhmed/BugBountyToolkit)
