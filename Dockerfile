@@ -88,7 +88,7 @@ RUN cd ${HOME}/toolkit \
 # eyewitness
 RUN cd ${HOME}/toolkit \
     && git clone https://github.com/FortyNorthSecurity/EyeWitness.git \
-    && cd EyeWitness/setup \
+    && cd EyeWitness/Python/setup \
     && ./setup.sh
 
 # go
