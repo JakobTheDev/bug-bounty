@@ -19,7 +19,7 @@ My basic testing environment includes:
 
 ## Polyglots
 
-- [XSS](lists/xss-polyglots.md)
+- [XSS](lists/polyglots/xss-polyglots.md)
 
 ## Notes
 

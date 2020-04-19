@@ -14,16 +14,22 @@
   - [Commands](#commands-1)
   - [Tools](#tools)
   - [Resources](#resources)
-- [Active Website Enumeration](#active-website-enumeration)
+- [DNS Resolving](#dns-resolving)
   - [Commands](#commands-2)
   - [Tools](#tools-1)
-- [Content Discovery](#content-discovery)
+- [Port Scanning](#port-scanning)
   - [Commands](#commands-3)
   - [Tools](#tools-2)
+- [Active Website Enumeration](#active-website-enumeration)
+  - [Commands](#commands-4)
+  - [Tools](#tools-3)
+- [Content Discovery](#content-discovery)
+  - [Commands](#commands-5)
+  - [Tools](#tools-4)
   - [Lists](#lists)
   - [Tips](#tips)
 - [Platform Identification](#platform-identification)
-  - [Tools](#tools-3)
+  - [Tools](#tools-5)
 
 ## Scope Enumeration
 
@@ -50,6 +56,8 @@ amass intel -asn ASN
 
 ### Certificate Transparency
 
+- [Facebook Certificate Transparency](https://developers.facebook.com/tools/ct/search/) - Search or subscribe to certificate transparency logs.
+
 ### Commands
 ```bash
 # Amass scan
@@ -74,6 +82,28 @@ subfinder-list DOMAINS.txt
 ### Resources
 - [Subdomains Enumeration Cheat Sheet](https://pentester.land/cheatsheets/2018/11/14/subdomains-enumeration-cheatsheet.html) - _Pentester Land_
 - [The Art of Subdomain Enumeration](https://github.com/appsecco/the-art-of-subdomain-enumeration) - _Appsecco_
+
+## DNS Resolving
+
+### Commands
+
+```bash
+# Resolve hostnames into IP addresses
+massdns -r ~/toolkit/massdns/lists/resolvers.txt -t A -w masssdns-raw.txt -q -o S $1
+
+# Convert massdns output into a list of IP addresses
+cat massdns-raw.txt | grep -v CNAME | awk '{split($0,a," "); print a[3]}' | sort | uniq > massdns-resolved-ips.txt
+```
+
+### Tools
+- [massdns](https://github.com/blechschmidt/massdns)
+
+## Port Scanning
+
+### Commands
+
+### Tools
+- [masscan](https://github.com/robertdavidgraham/masscan)
 
 ## Active Website Enumeration
 

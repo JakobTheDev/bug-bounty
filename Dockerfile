@@ -37,6 +37,7 @@ RUN apt-get update -y \
     python-pip \
     python3 \
     python3-pip \
+    ssh \
     tmux \
     tzdata \
     vim \
@@ -60,6 +61,7 @@ RUN locale-gen "en_US.UTF-8" \
 # Install dependencies
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
+    libpcap-dev \
     python3.7 \
     xauth
 
@@ -71,6 +73,7 @@ RUN apt-get update -y \
     dirb \
     dnsrecon \
     hydra \
+    masscan \
     nikto \
     nmap \
     sqlmap \
@@ -88,7 +91,7 @@ RUN cd ${HOME}/toolkit \
 # eyewitness
 RUN cd ${HOME}/toolkit \
     && git clone https://github.com/FortyNorthSecurity/EyeWitness.git \
-    && cd EyeWitness/setup \
+    && cd EyeWitness/Python/setup \
     && ./setup.sh
 
 # go
@@ -112,6 +115,13 @@ RUN go get github.com/hakluke/hakrawler
 
 # httprobe
 RUN go get -u github.com/tomnomnom/httprobe
+
+# masscan
+RUN cd ${HOME}/toolkit \
+    && git clone https://github.com/robertdavidgraham/masscan \
+    && cd masscan \
+    && make \
+    && cp bin/masscan /usr/bin
 
 # massdns
 RUN cd ${HOME}/toolkit \

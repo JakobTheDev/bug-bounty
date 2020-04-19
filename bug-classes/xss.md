@@ -11,7 +11,7 @@
 - Imported data from a third party
 
 ## Local Lists
-- [Polyglots](/lists/xss-polyglots.md)
+- [Polyglots](/lists/polyglots/xss-polyglots.md)
 
 ## Remote Lists
 - [SecLists](https://github.com/danielmiessler/SecLists/tree/master/Fuzzing/XSS)
