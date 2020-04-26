@@ -1,18 +1,18 @@
 ## SQLi
 
+## Tips
+- Basic SQLi testing in to run SQLMap against the target
+- Next level is to test using polyglots
+- Try testing injection points with isomorphic statements and see how responses differ (see spaceraccoon's post below)
+  - Replace `id=1` with `id=2-1` and `id=1+''`
+  - Replace `searchTerm=test` with `searchTerm=test%%` or `searchTerm=test%' '`
 
 ## Tools
 - SQLMap
 - SQLiPy (BurpSuite Extension)
 
-## Polyglots
-
-```
-SLEEP(1) /*‘ or SLEEP(1) or ‘“ or SLEEP(1) or “*/
-```
-
 ## Lists
-- SecLists
+- [SecLists](https://github.com/danielmiessler/SecLists/tree/master/Fuzzing/SQLi)
 
 ## Cheatsheets
 
@@ -36,3 +36,7 @@ SLEEP(1) /*‘ or SLEEP(1) or ‘“ or SLEEP(1) or “*/
 
 ## Resources
 - [The Bug Hunters Methodology - SQLi](https://github.com/jhaddix/tbhm/blob/master/06_SQLi.md)
+
+## Write-Ups
+- [Same Same But Different: Discovering SQL Injections Incrementally with Isomorphic SQL Statements](https://spaceraccoon.dev/same-same-but-different-discovering-sql-injections-incrementally-with) - _@spaceraccoon_
+

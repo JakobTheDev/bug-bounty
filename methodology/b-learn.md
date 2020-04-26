@@ -1,5 +1,8 @@
 # Learn
 
+## Ideas
+- Rather than scanning for vulnerabilities, we need to scan for interesting behaviour. [James Kettle](https://portswigger.net/research/backslash-powered-scanning-hunting-unknown-vulnerability-classes)
+
 ## Tools
 
 ### OSINT

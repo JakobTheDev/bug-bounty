@@ -1,5 +1,5 @@
 # Base off the lastest ubuntu image
-FROM ubuntu:18.04
+FROM ubuntu:18.10
 
 # Metadata
 LABEL maintainer="jakob.pennington@gmail.com"
@@ -81,6 +81,16 @@ RUN apt-get update -y \
     whois \
     wpscan
 
+# go
+RUN cd /opt \
+    && wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz \
+    && tar -xvf go1.13.3.linux-amd64.tar.gz \
+    && rm -rf /opt/go1.13.3.linux-amd64.tar.gz \
+    && mv go /usr/local
+ENV GOROOT /usr/local/go
+ENV GOPATH /root/go
+ENV PATH ${GOPATH}/bin:${GOROOT}/bin:${PATH}
+
 # configure python(s)
 RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && python3.7 -m pip install --upgrade setuptools
 
@@ -94,15 +104,8 @@ RUN cd ${HOME}/toolkit \
     && cd EyeWitness/Python/setup \
     && ./setup.sh
 
-# go
-RUN cd /opt \
-    && wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz \
-    && tar -xvf go1.13.3.linux-amd64.tar.gz \
-    && rm -rf /opt/go1.13.3.linux-amd64.tar.gz \
-    && mv go /usr/local
-ENV GOROOT /usr/local/go
-ENV GOPATH /root/go
-ENV PATH ${GOPATH}/bin:${GOROOT}/bin:${PATH}
+# fuff
+RUN go get github.com/ffuf/ffuf
 
 # gobuster
 RUN cd ${HOME}/toolkit \

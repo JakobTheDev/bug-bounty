@@ -89,10 +89,13 @@ subfinder-list DOMAINS.txt
 
 ```bash
 # Resolve hostnames into IP addresses
-massdns -r ~/toolkit/massdns/lists/resolvers.txt -t A -w masssdns-raw.txt -q -o S $1
+massdns -r ~/toolkit/massdns/lists/resolvers.txt -t A -w massdns-raw.txt -q -o S $1
 
 # Convert massdns output into a list of IP addresses
 cat massdns-raw.txt | grep -v CNAME | awk '{split($0,a," "); print a[3]}' | sort | uniq > massdns-resolved-ips.txt
+
+# Alias
+massdns-resolve subdomains.txt
 ```
 
 ### Tools
@@ -102,6 +105,20 @@ cat massdns-raw.txt | grep -v CNAME | awk '{split($0,a," "); print a[3]}' | sort
 
 ### Commands
 
+```bash
+# Scan top ports with masscan
+masscan --top-ports 1000 -iL massdns-resolved-ips.txt
+
+# Alias
+masscan-top 1000 massdns-resolved-ips.txt
+
+# Scan all ports
+masscan -p0-65535 -iL
+
+# Alias
+masscan-full massdns-resolved-ips.txt
+```
+
 ### Tools
 - [masscan](https://github.com/robertdavidgraham/masscan)
 
@@ -110,10 +127,10 @@ cat massdns-raw.txt | grep -v CNAME | awk '{split($0,a," "); print a[3]}' | sort
 ### Commands
 ```bash
 # Probe for active web servers
-cat subdomains.txt | httprobe -c 50
+cat subdomains.txt | httprobe -c 50 | tee up.txt
 
 # Screenshot active web pages
-docker run --rm -it -v $(pwd)/screenshots:/screenshots leonjza/gowitness:latest file /screenshots/hostnames.txt
+docker run --rm -it -v "$(pwd)/screenshots:/screenshots leonjza/gowitness:latest" file /screenshots/hostnames.txt
 docker run --rm -it -v $(pwd)/screenshots:/screenshots leonjza/gowitness:latest report generate
 ```
 
