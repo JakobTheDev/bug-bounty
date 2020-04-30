@@ -130,8 +130,8 @@ masscan-full massdns-resolved-ips.txt
 cat subdomains.txt | httprobe -c 50 | tee up.txt
 
 # Screenshot active web pages
-docker run --rm -it -v "$(pwd)/screenshots:/screenshots leonjza/gowitness:latest" file /screenshots/hostnames.txt
-docker run --rm -it -v $(pwd)/screenshots:/screenshots leonjza/gowitness:latest report generate
+# Note, this fails in wsl, use cmd or terminal instead
+docker run --rm -it -v "$(pwd)/screenshots":/screenshots leonjza/gowitness:latest file -s /screenshots/up.txt
 ```
 
 ### Tools

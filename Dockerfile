@@ -1,5 +1,5 @@
 # Base off the lastest ubuntu image
-FROM ubuntu:18.10
+FROM ubuntu:18.04
 
 # Metadata
 LABEL maintainer="jakob.pennington@gmail.com"
@@ -132,6 +132,10 @@ RUN cd ${HOME}/toolkit \
     && cd massdns \
     && make \
     && cp bin/massdns /usr/bin
+
+# payloadsallthethings
+RUN cd ${HOME}/wordlists \
+    && git clone --depth 1 https://github.com/swisskyrepo/PayloadsAllTheThings
 
 # seclists
 RUN cd ${HOME}/wordlists \

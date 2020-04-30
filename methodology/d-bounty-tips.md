@@ -1,4 +1,4 @@
-# Random Tips
+# Bounty Tips
 
 ## Account Testing
 - If you aren't asked to verify your email on account creation, try creating an account with their email domain (me@target.com)
