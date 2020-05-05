@@ -41,6 +41,9 @@ Below is a summary of my reconnaissance workflow. More details about the workflo
 
 ## Resources
 
+### Guides
+- [Self-Hosted Burp Collaborator](https://teamrot.fi/2019/05/23/self-hosted-burp-collaborator-with-custom-domain/) - _ROT_
+
 ### Lists
 - [Awesome Bug Bounty](https://github.com/djadmin/awesome-bug-bounty)
 

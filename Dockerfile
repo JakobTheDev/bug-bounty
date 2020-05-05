@@ -113,6 +113,9 @@ RUN cd ${HOME}/toolkit \
     && cd gobuster \
     && go get && go install
 
+# gron
+RUN go get -u github.com/tomnomnom/gron
+
 # hakrawler
 RUN go get github.com/hakluke/hakrawler
 

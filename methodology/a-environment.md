@@ -4,6 +4,7 @@
 - BurpSuite
 - Firefox
 - Terminal
+- [Private collaborator](https://teamrot.fi/2019/05/23/self-hosted-burp-collaborator-with-custom-domain/)
 
 ## Commands
 
