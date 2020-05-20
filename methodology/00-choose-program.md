@@ -5,6 +5,7 @@
 ## Contents
 - [Bug Bounty Platforms](#bug-bounty-platforms)
 - [Vulnerable Disclosure Programs](#vulnerable-disclosure-programs)
+- [Resources](#resources)
 
 ## Bug Bounty Platforms
 
@@ -19,7 +20,7 @@ Find public programs:
   - "Responsible Disclosure"
   - "Vulnerability Disclosure"
   - Responsible disclosure "bounty"
-  - intext:”Responsible Disclosure Policy”
+  - intext:"Responsible Disclosure Policy"
   - vulnerability disclosure program "bounty" -bugcrowd -hackerone
 
 Find private programs:
@@ -27,3 +28,6 @@ Find private programs:
   - "responsible disclosure" "private program"
   - "responsible disclosure" "private" "program"
   - Responsible disclosure "private program"
+
+## Resources
+- [Chaos](https://chaos.projectdiscovery.io/#/) - Public repository of subdomains for bug bounty programs.
