@@ -61,7 +61,7 @@ amass intel -asn ASN
 ### Commands
 ```bash
 # Amass scan
-amass -active -v -d DOMAIN
+amass enum -active -v -d DOMAIN
 
 # Amass aliases
 amass-single DOMAIN

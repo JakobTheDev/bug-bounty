@@ -92,7 +92,24 @@ ENV GOPATH /root/go
 ENV PATH ${GOPATH}/bin:${GOROOT}/bin:${PATH}
 
 # configure python(s)
-RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && python3.7 -m pip install --upgrade setuptools
+RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgrade setuptools && python3.7 -m pip install --upgrade setuptools && python3 -m pip install --upgrade wheel
+
+# install pip modules
+RUN python3 -m pip install \
+    loguru \
+    slack-webhook
+
+# Install odbc driver and pyodbc
+# From https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+    && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+    && apt-get update -y \
+    && ACCEPT_EULA=Y apt-get install -y --no-install-recommends msodbcsql17 unixodbc-dev python3-setuptools python3-dev \
+    && python3 -m pip install pyodbc
+
+
+# chaos client - projectdiscovery.io
+RUN GO111MODULE=on go get -u github.com/projectdiscovery/chaos-client/cmd/chaos
 
 # dirsearch
 RUN cd ${HOME}/toolkit \
