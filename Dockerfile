@@ -28,6 +28,7 @@ RUN apt-get update -y \
     git \
     gnupg \
     iputils-ping \
+    jq \
     locales \
     make \
     nano \
@@ -72,6 +73,7 @@ RUN apt-get update -y \
     awscli \
     dirb \
     dnsrecon \
+    ftp \
     hydra \
     masscan \
     nikto \
@@ -97,7 +99,9 @@ RUN python -m pip install --upgrade setuptools && python3 -m pip install --upgra
 # install pip modules
 RUN python3 -m pip install \
     loguru \
-    slack-webhook
+    pandas \
+    slack-webhook \
+    xmltodict
 
 # Install odbc driver and pyodbc
 # From https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15
