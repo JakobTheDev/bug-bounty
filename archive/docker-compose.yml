@@ -1,0 +1,14 @@
+version: '3'
+services:
+  bug-bounty:
+    image: jakob/bug-bounty
+    container_name: bug-bounty
+    hostname: bug-bounty
+    working_dir: /root/workspace
+    environment:
+      - COLORTERM
+      - TERM=xterm-256color
+    build:
+      context: .
+    volumes:
+      - /c/Users/jakob/Bug\ Bounty:/root/workspace
