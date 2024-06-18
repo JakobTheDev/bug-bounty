@@ -1,0 +1,12 @@
+{
+	"name": "Bug bounty dev container",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile"
+	},
+
+	// Mount git repos into the container for development
+	"mounts": [
+		"source=/home/jakob/Development,target=/root/workspace,type=bind"
+	]
+}
